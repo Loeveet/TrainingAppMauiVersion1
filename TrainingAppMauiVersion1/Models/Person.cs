@@ -19,7 +19,7 @@ namespace TrainingAppMauiVersion1.Models
         public string Email { get; set; }
         public List<TrainingProgram> Programs { get; set; }
 
-        public static async Task<List<Person>> GetUsers()
+        public static async Task<List<Person>> GetUsersFromMongoDB()
         {
             var settings = MongoClientSettings.FromConnectionString("mongodb+srv://RobinLiliegren:robin88@cluster0.cst2dyy.mongodb.net/?retryWrites=true&w=majority");
             settings.ServerApi = new ServerApi(ServerApiVersion.V1);
@@ -29,8 +29,6 @@ namespace TrainingAppMauiVersion1.Models
 
             var users = await GetAllUsers(myCollection);
             return users;
-            //var allUsers = await myCollection.AsQueryable().ToListAsync();
-            //return allUsers;
 
         }
 
