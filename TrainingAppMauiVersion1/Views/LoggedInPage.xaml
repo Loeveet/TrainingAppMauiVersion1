@@ -12,6 +12,9 @@
             Text="Congratulations, you are now logged in to the Training App!"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
-        
+        <Button
+            Text="Check weather"
+            Clicked="OnClickedWeatherPage"/>
+
     </VerticalStackLayout>
 </ContentPage>
