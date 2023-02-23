@@ -15,21 +15,22 @@ namespace TrainingAppMauiVersion1.ViewModels
 
         public MainPageViewModel()
         {
-            var task = Task.Run(() => GetUsersAsync());
-            task.Wait();
-            Users = task.Result;
+            //var task = Task.Run(() => GetUsersAsync());
+            //task.Wait();
+            //Users = task.Result;
         }
 
         public static async Task<List<Person>> GetUsersAsync()
         {
-            
+
             var settings = MongoClientSettings.FromConnectionString("mongodb+srv://RobinLiliegren:robin88@cluster0.cst2dyy.mongodb.net/?retryWrites=true&w=majority");
             settings.ServerApi = new ServerApi(ServerApiVersion.V1);
             var client = new MongoClient(settings);
             var database = client.GetDatabase("TrainingAppPerson");
             var myCollection = database.GetCollection<Person>("MyUsers");
 
-            return myCollection.AsQueryable().ToList();
+            var allUsers = await myCollection.AsQueryable().ToListAsync();
+            return allUsers;
         }
     }
 }
