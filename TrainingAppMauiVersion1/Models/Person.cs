@@ -19,23 +19,5 @@ namespace TrainingAppMauiVersion1.Models
         public string Email { get; set; }
         public List<TrainingProgram> Programs { get; set; }
 
-        //public static async Task<List<Person>> GetUsersFromMongoDB()
-        //{
-        //    var settings = MongoClientSettings.FromConnectionString("mongodb+srv://RobinLiliegren:robin88@cluster0.cst2dyy.mongodb.net/?retryWrites=true&w=majority");
-        //    settings.ServerApi = new ServerApi(ServerApiVersion.V1);
-        //    var client = new MongoClient(settings);
-        //    var database = client.GetDatabase("TrainingAppPerson");
-        //    var myCollection = database.GetCollection<Person>("MyUsers");
-
-        //    var users = await GetAllUsers(myCollection);
-        //    return users;
-
-        //}
-
-        //private static async Task<List<Person>> GetAllUsers(IMongoCollection<Person> myCollection)
-        //{
-        //    var allUsers = await myCollection.AsQueryable().ToListAsync();
-        //    return allUsers;
-        //}
     }
 }

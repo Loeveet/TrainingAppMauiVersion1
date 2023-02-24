@@ -2,14 +2,15 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TrainingAppMauiVersion1.Views.WeatherPage"
-             Title="WeatherPage">
+             xmlns:model="clr-namespace:TrainingAppMauiVersion1.Models"
+             Title="{Binding TheWeather.Name, StringFormat='Weather in {0}'}">
     <ScrollView>
         <VerticalStackLayout
             Spacing="25"
             Padding="30,0"
             VerticalOptions="Center">
 
-            <Label Text="The weather in Nyköping"/>
+            <Label Text="{Binding TheWeather.Name , StringFormat='The weather in {0}'}"/>
             <Label Text="{Binding TheWeather.Main.Temp, StringFormat='Temp: {0} °C'}"/>
             <Label Text="{Binding TheWeather.Main.FeelsLike, StringFormat='Feels like: {0} °C'}"/>
         </VerticalStackLayout>

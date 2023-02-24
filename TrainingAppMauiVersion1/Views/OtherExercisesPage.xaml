@@ -2,11 +2,48 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TrainingAppMauiVersion1.Views.OtherExercisesPage"
+             xmlns:model="clr-namespace:TrainingAppMauiVersion1.Models"
              Title="OtherExercisesPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Here you suppose to get access to alternative training, such as running and skiing."
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <ScrollView>
+        <VerticalStackLayout>
+            <Label
+                Text="Skiing exercises"
+                FontSize="Header"/>
+            <ListView
+                ItemsSource="{Binding OtherExercises}">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="model:CalorieBurningExercise">
+                        <ViewCell>
+                            <Grid 
+                                Padding="10"
+                                RowDefinitions="Auto, *"
+                                ColumnDefinitions="Auto, *">
+
+
+                                <Label
+                                    Grid.ColumnSpan="2"
+                                    Text="{Binding Name}"
+                                    FontSize="20"/>
+
+                                <Label
+                                    Grid.Row="1"
+                                    Grid.Column="0"
+                                    Text="{Binding CaloriesPerHour, StringFormat='{0} calories per '}"
+                                    FontSize="15"/>
+
+                                <Label
+                                    Grid.Row="1"
+                                    Grid.Column="1"
+                                    Text="{Binding DurationInMinutes, StringFormat=' {0} minutes'}"
+                                    FontSize="15"/>
+
+                            </Grid>
+
+
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

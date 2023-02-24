@@ -27,4 +27,9 @@ public partial class LoggedInPage : ContentPage
     {
         await Navigation.PushAsync(new OtherExercisesPage());
     }
+
+    private async void OnClickedSearchForOtherExercisesPage(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new SearchForOtherExercisesPage());
+    }
 }

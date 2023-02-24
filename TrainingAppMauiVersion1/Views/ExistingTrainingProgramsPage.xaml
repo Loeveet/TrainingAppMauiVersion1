@@ -22,13 +22,13 @@
 
                                 <Label
                             Grid.Column="1"
-                            Text="b"
+                            Text="a"
                             FontSize="32"/>
 
                                 <Label
                             Grid.Row="1"
                             Grid.Column="1"
-                            Text="a"
+                            Text="b"
                             FontSize="15"/>
 
                             </Grid>
