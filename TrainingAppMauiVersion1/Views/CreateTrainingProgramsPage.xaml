@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TrainingAppMauiVersion1.Views.CreateTrainingProgramsPage"
+             Title="CreateTrainingProgramsPage">
+    <VerticalStackLayout>
+        <Label 
+            Text="Page where to create new training programs. You will get the ability to search for
+            exercises, then choose the ones you like and add repetitions and weights."
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+    </VerticalStackLayout>
+</ContentPage>

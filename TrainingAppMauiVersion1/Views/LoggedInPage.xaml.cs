@@ -12,4 +12,19 @@ public partial class LoggedInPage : ContentPage
         await Navigation.PushAsync(new WeatherPage());
 
     }
+
+    private async void OnClickedExistingTrainingProgramsPage(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new ExistingTrainingProgramsPage());
+    }
+
+    private async void OnClickedCreateTrainingProgramsPage(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new CreateTrainingProgramsPage());
+    }
+
+    private async void OnClickedOtherExercisesPage(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new OtherExercisesPage());
+    }
 }

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TrainingAppMauiVersion1.Views.ExistingTrainingProgramsPage"
+             xmlns:model="clr-namespace:TrainingAppMauiVersion1"
+             Title="ExistingTrainingProgramsPage">
+    <ScrollView>
+        <VerticalStackLayout>
+            <Label
+                Text="Here you're suppose to see your personal training programs and the ones already made."/>
+            <ListView
+            ItemsSource="{Binding TrainingPrograms}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid 
+                        Padding="10"
+                        RowDefinitions="Auto, *"
+                        ColumnDefinitions="200, *"
+                        ColumnSpacing="20">
+
+
+                                <Label
+                            Grid.Column="1"
+                            Text="b"
+                            FontSize="32"/>
+
+                                <Label
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            Text="a"
+                            FontSize="15"/>
+
+                            </Grid>
+
+
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

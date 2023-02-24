@@ -3,48 +3,50 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TrainingAppMauiVersion1.Views.RegisterPage"
              Title="RegisterPage">
-    <VerticalStackLayout
-        Spacing="25"
-        Padding="30,0"
-        VerticalOptions="Center">
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
         
-        <Label 
-            Text="Register"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" 
-            FontSize="Header"/>
+            <Label 
+                Text="Register"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" 
+                FontSize="Header"/>
         
-        <Entry
-            x:Name="RegisterUserName"
-            Placeholder="Username"/>
+            <Entry
+                x:Name="RegisterUserName"
+                Placeholder="Username"/>
 
-        <Entry
-            x:Name="RegisterPassWord"
-            Placeholder="Password"
-            IsPassword="True"/>
+            <Entry
+                x:Name="RegisterPassWord"
+                Placeholder="Password"
+                IsPassword="True"/>
 
-        <Entry
-            x:Name="RegisterName"
-            Placeholder="Name"/>
+            <Entry
+                x:Name="RegisterName"
+                Placeholder="Name"/>
         
-        <Entry
-            x:Name="RegisterBirthDate"
-            Placeholder="Date of birth (yyyy-mm-dd)"/>
+            <Entry
+                x:Name="RegisterBirthDate"
+                Placeholder="Date of birth (yyyy-mm-dd)"/>
         
-        <Entry
-            x:Name="RegisterWeight"
-            Placeholder="Weigtht in kg"/>
+            <Entry
+                x:Name="RegisterWeight"
+                Placeholder="Weigtht in kg"/>
         
-        <Entry
-            x:Name="RegisterHeight"
-            Placeholder="Height in cm"/>
+            <Entry
+                x:Name="RegisterHeight"
+                Placeholder="Height in cm"/>
         
-        <Entry
-            x:Name="RegisterEmail"
-            Placeholder="Email"/>
-        <Button
-            Text="Register"
-            Clicked="OnClickedRegisterButton"/>
+            <Entry
+                x:Name="RegisterEmail"
+                Placeholder="Email"/>
+            <Button
+                Text="Register"
+                Clicked="OnClickedRegisterButton"/>
 
-    </VerticalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

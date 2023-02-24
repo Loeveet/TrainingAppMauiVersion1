@@ -16,7 +16,7 @@ public partial class MainPage : ContentPage
 
     private async void OnClickedLoggedIn(object sender, EventArgs e)
     {
-        var users = await Person.GetUsersFromMongoDB();
+        var users = await MainPageViewModel.GetUsersFromMongoDB();
 
         foreach (var user in users)
         {
