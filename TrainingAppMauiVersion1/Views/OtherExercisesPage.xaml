@@ -7,8 +7,11 @@
     <ScrollView>
         <VerticalStackLayout>
             <Label
-                Text="Skiing exercises"
-                FontSize="Header"/>
+                Text="Search for exercises"
+                FontSize="15"/>
+            <Entry
+                x:Name="MySearch"
+                Placeholder="Enter a searchword"/>
             <ListView
                 ItemsSource="{Binding OtherExercises}">
                 <ListView.ItemTemplate>

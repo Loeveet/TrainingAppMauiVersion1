@@ -13,14 +13,15 @@ namespace TrainingAppMauiVersion1.ViewModels
     {
         public List<CalorieBurningExercise> OtherExercises { get; set; }
 
+
         public OtherExercisesViewModel()
         {
-            var task = Task.Run(() => GetCalorieBurningExercisesAsync());
+            var task = Task.Run(() => GetCalorieBurningExercisesAsync("skii"));
             task.Wait();
             OtherExercises = task.Result;
         }
 
-        public static async Task<List<CalorieBurningExercise>> GetCalorieBurningExercisesAsync()
+        public static async Task<List<CalorieBurningExercise>> GetCalorieBurningExercisesAsync(string activity)
         {
             var client = new HttpClient();
             client.BaseAddress = new Uri("https://api.api-ninjas.com/");
@@ -28,7 +29,7 @@ namespace TrainingAppMauiVersion1.ViewModels
 
             List<CalorieBurningExercise> cbe = null;
 
-            HttpResponseMessage response = await client.GetAsync("v1/caloriesburned?activity=skii"); //gör så att man kan skicka in sökparameter här
+            HttpResponseMessage response = await client.GetAsync("v1/caloriesburned?activity=" + activity);
             if (response.IsSuccessStatusCode)
             {
                 string responseString = await response.Content.ReadAsStringAsync();
