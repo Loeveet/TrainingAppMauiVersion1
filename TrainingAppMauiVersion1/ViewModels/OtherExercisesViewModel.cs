@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,7 +10,7 @@ using TrainingAppMauiVersion1.Views;
 
 namespace TrainingAppMauiVersion1.ViewModels
 {
-    internal class OtherExercisesViewModel
+    internal partial class OtherExercisesViewModel : ObservableObject
     {
         public List<CalorieBurningExercise> OtherExercises { get; set; }
 

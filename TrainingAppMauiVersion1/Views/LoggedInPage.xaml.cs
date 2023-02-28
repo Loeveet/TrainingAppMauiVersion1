@@ -7,11 +7,6 @@ public partial class LoggedInPage : ContentPage
 		InitializeComponent();
 	}
 
-    private async void OnClickedWeatherPage(object sender, EventArgs e)
-    {
-        await Navigation.PushAsync(new WeatherPage());
-
-    }
 
     private async void OnClickedExistingTrainingProgramsPage(object sender, EventArgs e)
     {

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace TrainingAppMauiVersion1.Models
 {
-    internal class OpenWeather
+    public class OpenWeather
     {
         [JsonPropertyName("coord")]
         public Coord Coordinates { get; set; }

@@ -1,4 +1,5 @@
-﻿using MongoDB.Driver;
+﻿using CommunityToolkit.Mvvm.Input;
+using MongoDB.Driver;
 using TrainingAppMauiVersion1.Models;
 using TrainingAppMauiVersion1.ViewModels;
 
@@ -11,26 +12,18 @@ public partial class MainPage : ContentPage
     {
         InitializeComponent();
         BindingContext = new MainPageViewModel();
+
     }
-
-
-    private async void OnClickedLoggedIn(object sender, EventArgs e)
+    protected override void OnAppearing()
     {
-        var users = await MainPageViewModel.GetUsersFromMongoDB();
-
-        foreach (var user in users)
-        {
-            if (MyUserName.Text == user.UserName && MyPassword.Text == user.PassWord)
-            {
-                await App.Current.MainPage.DisplayAlert("Success", "Welcome " + user.Name, "Continue");
-                await Navigation.PushAsync(new Views.LoggedInPage());
-                return;
-            }
-
-        }
-
-        await App.Current.MainPage.DisplayAlert("Failed to log in", "Wrong username or password", "Try again");
+        base.OnAppearing();
+        (BindingContext as MainPageViewModel).GetAWeather();
     }
+    public async void OnClickedLoggedIn1(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new Views.LoggedInPage());
+    }
+
 
     private async void OnClickedRegister(object sender, EventArgs e)
     {

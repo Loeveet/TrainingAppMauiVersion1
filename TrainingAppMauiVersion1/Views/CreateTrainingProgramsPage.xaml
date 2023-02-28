@@ -10,5 +10,11 @@
             exercises, then choose the ones you like and add repetitions and weights."
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
+
+        <Entry
+            Text="{Binding Input}"
+            Placeholder="Search for exercise using muscles"/>
+        
+        
     </VerticalStackLayout>
 </ContentPage>

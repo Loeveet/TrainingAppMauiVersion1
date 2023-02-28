@@ -1,4 +1,5 @@
-﻿using MongoDB.Driver;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,7 @@ using TrainingAppMauiVersion1.Models;
 
 namespace TrainingAppMauiVersion1.ViewModels
 {
-    internal class ExistingTrainingProgramsViewModel
+    internal partial class ExistingTrainingProgramsViewModel : ObservableObject
     {
         public List<TrainingProgram> TrainingPrograms { get; set; }
 
